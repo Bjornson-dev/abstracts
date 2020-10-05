@@ -1,0 +1,25 @@
+.navLink {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	text-decoration: none;
+	color: #000;
+	background-color: #fff;
+	transition: 0.3s;
+	&:hover {
+		background-color: #ccc;
+	}
+}
+.navLink__active {
+	color: #fff;
+	background-color: #000 !important;
+}
+
+.navLink__active {
+	&::before {
+		content: "=>";
+	}
+}
+.navLink__active:hover {
+	color: rgba($color: #fff, $alpha: 0.6);
+}
