@@ -22,9 +22,6 @@ let addNewAbstract = () => {
   rerenderEntireTree(state);
 }
 
-
-
-
 let state = {
   sidebar: [
     {
