@@ -5,8 +5,18 @@ import s from './AddNewAbstract.module.scss';
 const AddNewAbstract = (props) => {
 
   let state = props.state,
+      editor = React.useRef(null),
+      name = React.useRef(null),
       addNewAbstract = () => {
         state.addNewAbstract();
+      },
+      onEditorChange = () => {
+        let editorValue = editor.current.value;
+        state.updateFieldsValue(editorValue, 'editorValue');
+      },
+      onNameChange = () => {
+        let nameValue = name.current.value;
+        state.updateFieldsValue(nameValue, 'nameValue');
       };
 
   return (
@@ -16,9 +26,15 @@ const AddNewAbstract = (props) => {
         <form action="">
           <textarea
             className={s.abstractEditor}
+            ref={editor}
+            value={state.editorValue}
+            onChange={onEditorChange}
             cols="90" rows="25"
           />
           <input
+            ref={name}
+            value={state.nameValue}
+            onChange={onNameChange}
             type="text" name="name"
           />
         </form>

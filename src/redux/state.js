@@ -1,29 +1,34 @@
 import { rerenderEntireTree } from './../render'
 
 let addNewAbstract = () => {
-  let currentId = state.sidebar.length + 1;
-  let newAbstract = {
+  let currentId = state.sidebar.length + 1,
+      nameValue = state.abstracts.addNew.nameValue,
+      editorValue = state.abstracts.addNew.editorValue,
+      newAbstract = {
     sidebar: {
       id: currentId,
       name: 'abstract-' + currentId,
       link: '/abstract-' + currentId,
-      title: 'Abstract ' + currentId
+      title: nameValue
     },
     abstract: {
       id: currentId,
       name: 'abstract-' + currentId,
       link: '/abstract-' + currentId,
-      title: 'Abstract ' + currentId,
-      content: 'Abstract text ' + currentId
+      title: nameValue,
+      content: editorValue
     }
-  }
+  };
   state.sidebar.push(newAbstract.sidebar);
   state.abstracts.content.push(newAbstract.abstract);
+  state.abstracts.addNew.nameValue = '';
+  state.abstracts.addNew.editorValue = '';
   rerenderEntireTree(state);
 }
-
-
-
+let updateFieldsValue = (value, e) => {
+  state.abstracts.addNew[e] = value;
+  rerenderEntireTree(state);
+}
 
 let state = {
   sidebar: [
@@ -70,7 +75,8 @@ let state = {
     addNew: {
       editorValue: "",
       nameValue: "",
-      addNewAbstract
+      addNewAbstract,
+      updateFieldsValue
     }
   }
 }

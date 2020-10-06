@@ -6,7 +6,6 @@ import * as serviceWorker from './serviceWorker';
 import globalStyle from './App.css'
 import { BrowserRouter } from 'react-router-dom';
 
-
 export let rerenderEntireTree = state => {
   ReactDOM.render(
     <React.StrictMode>
