@@ -3,7 +3,9 @@
 	height: 100vh;
 	max-height: 100vh;
 	background-color: #fff;
-	// padding-top: 67px;
+	position: fixed;
+	left: 0;
+	top: 0;
 }
 .currentLang {
 	width: 320px;

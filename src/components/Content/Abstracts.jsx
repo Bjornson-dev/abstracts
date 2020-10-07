@@ -11,7 +11,7 @@ const Abstracts = (props) => {
   return (
     <div className={s.abstracts}>
       {abstracts}
-      <AddNewAbstract state={props.state.addNew} link="/add-new" />
+      <AddNewAbstract state={props.state.newAbstract} link="/add-new" />
     </div>
   )
 };
