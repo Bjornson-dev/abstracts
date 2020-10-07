@@ -6,17 +6,17 @@ const AddNewAbstract = (props) => {
 
   let state = props.state,
       editor = React.useRef(null),
-      name = React.useRef(null),
+      title = React.useRef(null),
       addNewAbstract = () => {
         state.addNewAbstract();
       },
       onEditorChange = () => {
         let editorValue = editor.current.value;
-        state.updateFieldsValue(editorValue, 'editorValue');
+        state.newAbstractValue.updateFieldsValue(editorValue, 'editorValue');
       },
-      onNameChange = () => {
-        let nameValue = name.current.value;
-        state.updateFieldsValue(nameValue, 'nameValue');
+      onTitleChange = () => {
+        let titleValue = title.current.value;
+        state.newAbstractValue.updateFieldsValue(titleValue, 'titleValue');
       };
 
   return (
@@ -32,10 +32,10 @@ const AddNewAbstract = (props) => {
             cols="90" rows="25"
           />
           <input
-            ref={name}
+            ref={title}
             value={state.nameValue}
-            onChange={onNameChange}
-            type="text" name="name"
+            onChange={onTitleChange}
+            type="text" name="title"
           />
         </form>
         <button className={s.addAbstract} onClick={addNewAbstract}>Добавить конспект</button>

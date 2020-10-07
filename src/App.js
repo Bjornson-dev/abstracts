@@ -5,8 +5,8 @@ import Sidebar from './components/Sidebar/Sidebar'
 const App = (props) => {
   return (
     <div className="App">
-      <Sidebar state={props.state.sidebar} />
-      <Abstracts state={props.state.abstracts} />
+      <Sidebar state={props.state.getState().sidebar} />
+      <Abstracts state={props.state.getState().abstracts}/>
     </div>
   )
 }
