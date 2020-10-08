@@ -1,0 +1,92 @@
+.editorWrapper,
+.nameWrapper {
+  padding: 2px;
+  position: relative;
+  width: fit-content;
+}
+.editorWrapper {
+  margin-bottom: 40px;
+}
+.nameWrapper {
+  margin-right: 40px;
+}
+.editorBorderHorizontal {
+  position: absolute;
+  background-color: #ffffff;
+  width: 80%;
+  height: 100% ;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: .3s;
+}
+.editorBorderVertical {
+  position: absolute;
+  background-color: #ffffff;
+  width: 100%;
+  height: 80%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: .3s;
+}
+.editor,
+.name {
+  display: block;
+  border-radius: 0;
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  border: none;
+  position: relative;
+  z-index: 2;
+  min-width: 300px;
+  min-height: 300px;
+	cursor: url(./../../assets/cursor/wstealth2_text.cur), auto;
+  &:focus {
+    outline: none;
+    & + .borders div{
+      box-shadow: 0 0 5px #fff ,0 0 15px #fff;
+      &.editorBorderVertical {
+        height: 100%;
+      }
+      &.editorBorderHorizontal {
+        width: 100%;
+      }
+      
+    }
+  }
+}
+.name {
+  padding: 15px;
+  min-height: auto;
+  min-height: auto;
+  display: block;
+  & + .borders {
+    & .editorBorderHorizontal {
+      left: 10px;
+      transform: translateX(0) ;
+    }
+  }
+  &:focus {
+    & + .borders div{
+      &.editorBorderHorizontal {
+        width: 100%;
+        left: 0;
+      }
+    }
+  }
+}
+.bottomWrapper {
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
+}
+.addBtn {
+  padding: 15px; 
+  background-color: #ffffff;
+  color: #000;
+  border: none;
+  font-weight: 500;
+  font-size: 15px;
+}

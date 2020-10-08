@@ -1,22 +1,22 @@
 import React from 'react';
-import AddNew from './AddNew/AddNew';
-import NavItem from './NavItem/NavItem';
+import { NavLink } from 'react-router-dom';
 import s from './Sidebar.module.scss';
+import SidebarItem from './SidebarItem/SidebarItem';
 
 const Sidebar = (props) => {
-  let navItems = props.state.map(e => {
-    return <NavItem link={e.link} title={e.title} />
-  });
-
   return (
     <div className={s.sidebar}>
-      <h1 className={s.currentLang}> =&lt;&lt;JavaScript&gt;&gt;= </h1>
+      <h1 className={s.langHeading}> =&lt;&lt; Javascript &gt;&gt;= </h1>
       <nav className={s.nav}>
-        <ul className={s.navList}>
-          {navItems}
+        <ul className={s.list}>
+          <SidebarItem link="/link-1" title="test-1"/>
+          <SidebarItem link="/link-2" title="test-2"/>
+          <SidebarItem link="/link-3" title="test-3"/>
         </ul>
       </nav>
-      <AddNew link="/add-new" text="~~>+ Добавить конспект +<~~" />
+      <NavLink to="/add-new-abstract" className={s.btnNew} activeClassName={s.btnNewActive}>
+        ~~&gt; + Добавить конспект + &lt;~~
+      </NavLink>
     </div>
   )
 };

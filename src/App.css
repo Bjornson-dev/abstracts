@@ -3,18 +3,20 @@
 *::before {
 	box-sizing: border-box;
 	font-family: "Fira Code", monospace;
+	cursor: url(assets/cursor/wstealth2_alt.cur), auto;
 }
 body {
 	background-color: #000;
 	color: #fff;
 }
-
 ::-webkit-scrollbar {
 	width: 12px;
 	height: 8px;
 	background-color: #000;
 }
-
+a, button {
+	cursor: url(assets/cursor/wstealth2_hand.cur), auto;
+}
 ::-webkit-scrollbar-thumb {
 	background-color: #fff;
 }

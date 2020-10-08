@@ -1,33 +1,44 @@
 .sidebar {
-	width: 320px;
-	height: 100vh;
-	max-height: 100vh;
-	background-color: #fff;
-	position: fixed;
-	left: 0;
-	top: 0;
+  width: 320px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
 }
-.currentLang {
-	width: 320px;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	margin: 0;
-	text-align: center;
-	font-size: 28px;
-	background-color: #000000;
+.langHeading {
+  font-size: 26px;
+  text-align: center;
+  height: 70px;
+  line-height: 70px;
+  margin: 0;
 }
 .nav {
-	max-height: calc(100vh - 67px - 35px);
-	overflow: scroll;
-	overflow-x: hidden;
-	direction: rtl;
-	* {
-		direction: ltr;
-	}
+  overflow: scroll;
+  overflow-x: hidden;
+  direction: rtl;
+  & * {
+    direction: ltr;
+  }
 }
-.navList {
-	width: 100%;
-	list-style: none;
-	padding: 0;
-	margin: 0;
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: calc(100vh - 110px);
+  background-color: #ffffff;
+
+}
+.btnNew {
+  display: block;
+  height: 40px;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #000000;
+  line-height: 40px;
+  text-align: center;
+}
+.btnNewActive {
+  background-color: #ffffff;
+  color: #000000;
+  cursor: url(../../assets/cursor/wstealth2_alt.cur), auto;
 }
